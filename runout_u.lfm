@@ -1,7 +1,7 @@
 object frmRunOut: TfrmRunOut
-  Left = 495
+  Left = 322
   Height = 384
-  Top = 138
+  Top = 169
   Width = 581
   Caption = 'frmRunOut'
   ClientHeight = 384
@@ -181,7 +181,7 @@ object frmRunOut: TfrmRunOut
       ClientWidth = 579
       object dbgFielders: TDBGrid
         Left = 0
-        Height = 311
+        Height = 332
         Top = 24
         Width = 288
         Align = alLeft

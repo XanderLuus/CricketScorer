@@ -15,7 +15,6 @@ object dmMain: TdmMain
     top = 24
   end
   object SQLQuery1: TSQLQuery
-    IndexName = 'DEFAULT_ORDER'
     FieldDefs = <    
       item
         Name = 'id'

@@ -28,7 +28,7 @@ type
   private
     { private declarations }
   public
-    { public declarations }
+    sTeamDB : String;
   end;
 
 var

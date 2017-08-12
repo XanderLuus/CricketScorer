@@ -5,7 +5,7 @@ object dmMain: TdmMain
   VerticalOffset = 227
   Width = 814
   object SQLite3Connection1: TSQLite3Connection
-    Connected = True
+    Connected = False
     LoginPrompt = False
     DatabaseName = '/home/xander/Laz proj/Cricket remaster 2/C:/Xander Files/cricketTest/gb.sqlite'
     KeepConnection = False
@@ -34,7 +34,6 @@ object dmMain: TdmMain
         Precision = -1
         Size = 20
       end>
-    Active = True
     Database = SQLite3Connection1
     Transaction = SQLTransaction1
     SQL.Strings = (
@@ -46,7 +45,7 @@ object dmMain: TdmMain
     top = 24
   end
   object SQLTransaction1: TSQLTransaction
-    Active = True
+    Active = False
     Database = SQLite3Connection1
     Options = []
     left = 232

@@ -267,7 +267,7 @@ begin
 
     dmMain.SQLQryWrite.Active:=False;
     dmMain.SQLQryWrite.SQL.Text :=
-    'UPDATE  "team1" SET ' +
+    'UPDATE  "'+dmMain.sTeamDB+'" SET ' +
     '1s = "'+ IntToStr(iSingle1) +
     '", 2s = "'+ IntToStr(iDouble1) +
     '", 3s = "'+ IntToStr(iTriple1) +

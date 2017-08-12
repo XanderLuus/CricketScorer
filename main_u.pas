@@ -15,7 +15,6 @@ type
   TfrmMain = class(TForm)
     btnCreate: TButton;
     Button1: TButton;
-    Button2: TButton;
     CheckBox1: TCheckBox;
     DBGrid1: TDBGrid;
     DBGrid2: TDBGrid;
@@ -63,7 +62,6 @@ type
     tsAddPlayer: TTabSheet;
     procedure btnCreateClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
     procedure CheckBox1Change(Sender: TObject);
     procedure dblTeam1Click(Sender: TObject);
     procedure dblTeam2Click(Sender: TObject);
@@ -99,15 +97,15 @@ var
 begin
   sDbName := edtDBname.Text;
 
-  if DirectoryExists('C:/Xander Files/cricketTest') then
+  if DirectoryExists('/home/xander/cricketTest') then
   begin
     ShowMessage('Dir Exists');
   end else
   begin
-    ForceDirectories('C:/Xander Files/cricketTest');
+    ForceDirectories('/home/xander/cricketTest');
   end;
 
-    dmMain.SQLite3Connection1.DatabaseName:='C:/Xander Files/cricketTest/'+sDbName+
+    dmMain.SQLite3Connection1.DatabaseName:='/home/xander/cricketTest'+sDbName+
     '.sqlite';
     if FileExists(dmMain.SQLite3Connection1.DatabaseName) then
     ShowMessage('ERROR : Database already exists!') else
@@ -228,11 +226,6 @@ begin
   frmMain.Hide;
 end;
 
-procedure TfrmMain.Button2Click(Sender: TObject);
-begin
-  //prcOverFinish;
-end;
-
 procedure TfrmMain.CheckBox1Change(Sender: TObject);
 begin
   if CheckBox1.Checked = True then
@@ -254,12 +247,16 @@ end;
 
 procedure TfrmMain.dblTeam1Click(Sender: TObject);
 begin
-  //ToDo : Set team 1 For first innings
+  dmMain.sTeamDB := 'Team1';
+  dblTeam1.Font.Color := clGreen;
+  dblTeam2.Font.Color := clDefault;
 end;
 
 procedure TfrmMain.dblTeam2Click(Sender: TObject);
 begin
-  //ToDo : Set team 2 for first innings
+  dmMain.sTeamDB := 'Team2';
+  dblTeam2.Font.Color := clGreen;
+  dblTeam1.Font.Color := clDefault;
 end;
 
 

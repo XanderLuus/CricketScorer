@@ -1,15 +1,15 @@
 object frmRunOut: TfrmRunOut
-  Left = 532
-  Height = 363
-  Top = 165
+  Left = 425
+  Height = 384
+  Top = 141
   Width = 581
   Caption = 'frmRunOut'
-  ClientHeight = 363
+  ClientHeight = 384
   ClientWidth = 581
   LCLVersion = '1.6.0.4'
   object pcOut: TPageControl
     Left = 0
-    Height = 363
+    Height = 384
     Top = 0
     Width = 581
     ActivePage = tsBatsman
@@ -18,7 +18,7 @@ object frmRunOut: TfrmRunOut
     TabOrder = 0
     object tsBatsman: TTabSheet
       Caption = 'tsBatsman'
-      ClientHeight = 335
+      ClientHeight = 356
       ClientWidth = 579
       object GroupBox3: TGroupBox
         Left = 88
@@ -177,11 +177,11 @@ object frmRunOut: TfrmRunOut
     end
     object tsFielder: TTabSheet
       Caption = 'tsFielder'
-      ClientHeight = 335
+      ClientHeight = 356
       ClientWidth = 579
       object dbgFielders: TDBGrid
         Left = 0
-        Height = 311
+        Height = 332
         Top = 24
         Width = 288
         Align = alLeft

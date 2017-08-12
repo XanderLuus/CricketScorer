@@ -1,26 +1,26 @@
 object frmMain: TfrmMain
-  Left = 347
-  Height = 589
-  Top = 53
-  Width = 925
+  Left = 1366
+  Height = 739
+  Top = 0
+  Width = 1024
   Caption = 'frmMain'
-  ClientHeight = 589
-  ClientWidth = 925
+  ClientHeight = 739
+  ClientWidth = 1024
   LCLVersion = '1.6.0.4'
   WindowState = wsMaximized
   object PageControl: TPageControl
     Left = 0
-    Height = 589
+    Height = 739
     Top = 0
-    Width = 925
-    ActivePage = tsAddPlayer
+    Width = 1024
+    ActivePage = tsMain
     Align = alClient
-    TabIndex = 3
+    TabIndex = 0
     TabOrder = 0
     object tsMain: TTabSheet
       Caption = 'tsMain'
-      ClientHeight = 561
-      ClientWidth = 923
+      ClientHeight = 711
+      ClientWidth = 1022
       object Panel1: TPanel
         Left = 344
         Height = 66
@@ -53,20 +53,11 @@ object frmMain: TfrmMain
         TabOrder = 1
         OnClick = Panel2Click
       end
-      object Button2: TButton
-        Left = 88
-        Height = 25
-        Top = 48
-        Width = 75
-        Caption = 'Button2'
-        OnClick = Button2Click
-        TabOrder = 2
-      end
     end
     object tsNewMatch: TTabSheet
       Caption = 'tsNewMatch'
-      ClientHeight = 561
-      ClientWidth = 923
+      ClientHeight = 711
+      ClientWidth = 1022
       object edtDBname: TEdit
         Left = 288
         Height = 39
@@ -156,8 +147,8 @@ object frmMain: TfrmMain
     end
     object tsLoadMatch: TTabSheet
       Caption = 'tsLoadMatch'
-      ClientHeight = 561
-      ClientWidth = 923
+      ClientHeight = 711
+      ClientWidth = 1022
       object DBGrid1: TDBGrid
         Left = 264
         Height = 280
@@ -182,8 +173,8 @@ object frmMain: TfrmMain
     end
     object tsAddPlayer: TTabSheet
       Caption = 'tsAddPlayer'
-      ClientHeight = 561
-      ClientWidth = 923
+      ClientHeight = 711
+      ClientWidth = 1022
       object DBGrid2: TDBGrid
         Left = 16
         Height = 368
@@ -436,7 +427,7 @@ object frmMain: TfrmMain
         Height = 81
         Top = 408
         Width = 250
-        Caption = 'GroupBox3'
+        Caption = 'First Team to Bat'
         ClientHeight = 61
         ClientWidth = 246
         TabOrder = 11
@@ -458,8 +449,6 @@ object frmMain: TfrmMain
             Width = 113
             Align = alClient
             Alignment = taCenter
-            DataField = 'team1_name'
-            DataSource = dmMain.DataSource1
             Layout = tlCenter
             ParentColor = False
             OnClick = dblTeam1Click
@@ -483,8 +472,6 @@ object frmMain: TfrmMain
             Width = 113
             Align = alClient
             Alignment = taCenter
-            DataField = 'team2_name'
-            DataSource = dmMain.DataSource1
             Layout = tlCenter
             ParentColor = False
             OnClick = dblTeam2Click
