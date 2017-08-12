@@ -1,0 +1,433 @@
+object frmScorer: TfrmScorer
+  Left = 41
+  Height = 580
+  Top = 119
+  Width = 1234
+  Caption = 'frmScorer'
+  ClientHeight = 580
+  ClientWidth = 1234
+  OnCreate = FormCreate
+  LCLVersion = '1.6.0.4'
+  WindowState = wsFullScreen
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 580
+    Top = 0
+    Width = 1234
+    ActivePage = TabSheet1
+    Align = alClient
+    Font.Height = -13
+    Font.Name = 'Sans'
+    ParentFont = False
+    TabIndex = 0
+    TabOrder = 0
+    object TabSheet1: TTabSheet
+      Caption = 'TabSheet1'
+      ClientHeight = 555
+      ClientWidth = 1232
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      object GroupBox1: TGroupBox
+        Left = 8
+        Height = 288
+        Top = 253
+        Width = 200
+        Caption = 'Out'
+        ClientHeight = 271
+        ClientWidth = 196
+        TabOrder = 0
+        object rgOut: TRadioGroup
+          Left = 0
+          Height = 232
+          Top = 0
+          Width = 196
+          Align = alTop
+          AutoFill = True
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousChildResize
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 1
+          ClientHeight = 228
+          ClientWidth = 192
+          Items.Strings = (
+            'Bowled'
+            'LBW'
+            'Caught'
+            'Run Out'
+            'Stonk'
+            'Hit Own Stumps'
+            'DQ'
+            'Retire'
+          )
+          TabOrder = 0
+        end
+        object btnOutConfirm: TButton
+          Left = 0
+          Height = 36
+          Top = 235
+          Width = 196
+          Align = alBottom
+          Caption = 'Confirm'
+          OnClick = btnOutConfirmClick
+          TabOrder = 1
+        end
+      end
+      object GroupBox2: TGroupBox
+        Left = 8
+        Height = 218
+        Top = 24
+        Width = 200
+        ClientHeight = 214
+        ClientWidth = 196
+        TabOrder = 1
+        object rgRuns: TRadioGroup
+          Left = 0
+          Height = 214
+          Top = 0
+          Width = 96
+          Align = alLeft
+          AutoFill = True
+          Caption = 'Runs'
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousChildResize
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 1
+          ClientHeight = 197
+          ClientWidth = 92
+          Items.Strings = (
+            '1'
+            '2'
+            '3'
+            '4'
+            '5'
+            '6'
+            'Wide'
+            'No Ball'
+          )
+          TabOrder = 0
+        end
+        object btnRunsConfirm: TButton
+          Left = 96
+          Height = 49
+          Top = 82
+          Width = 99
+          Caption = 'Confirm'
+          OnClick = btnRunsConfirmClick
+          TabOrder = 1
+        end
+      end
+      object GroupBox3: TGroupBox
+        Left = 248
+        Height = 209
+        Top = 16
+        Width = 312
+        Caption = 'GroupBox3'
+        ClientHeight = 192
+        ClientWidth = 308
+        TabOrder = 2
+        object Label1: TLabel
+          Left = 0
+          Height = 24
+          Top = 0
+          Width = 308
+          Align = alTop
+          Caption = 'Batsman Facing :'
+          Font.Height = -20
+          Font.Name = 'Sans'
+          ParentColor = False
+          ParentFont = False
+        end
+        object pnlBatsmanFacing: TPanel
+          Left = 0
+          Height = 50
+          Top = 24
+          Width = 308
+          Align = alTop
+          ClientHeight = 50
+          ClientWidth = 308
+          Font.Height = -20
+          Font.Name = 'Sans'
+          ParentFont = False
+          TabOrder = 0
+          object DBText1: TDBText
+            Left = 1
+            Height = 48
+            Top = 1
+            Width = 306
+            Align = alClient
+            Alignment = taCenter
+            DataSource = dmMain.DataSBatA
+            Layout = tlCenter
+            ParentColor = False
+          end
+        end
+        object Label2: TLabel
+          Left = 0
+          Height = 24
+          Top = 74
+          Width = 308
+          Align = alTop
+          Caption = 'Current Bowler :'
+          Font.Height = -20
+          Font.Name = 'Sans'
+          ParentColor = False
+          ParentFont = False
+        end
+        object pnlCurrentBowler: TPanel
+          Left = 0
+          Height = 50
+          Top = 98
+          Width = 308
+          Align = alTop
+          Caption = 'pnlCurrentBowler'
+          Font.Height = -20
+          Font.Name = 'Sans'
+          ParentFont = False
+          TabOrder = 1
+        end
+      end
+      object GroupBox4: TGroupBox
+        Left = 248
+        Height = 275
+        Top = 253
+        Width = 313
+        ClientHeight = 271
+        ClientWidth = 309
+        TabOrder = 3
+        object Panel3: TPanel
+          Left = 0
+          Height = 50
+          Top = 0
+          Width = 309
+          Align = alTop
+          BevelWidth = 4
+          Caption = 'Panel3'
+          TabOrder = 0
+        end
+        object Label3: TLabel
+          Left = 0
+          Height = 15
+          Top = 50
+          Width = 309
+          Align = alTop
+          Caption = ' '
+          Color = clGray
+          ParentColor = False
+          Transparent = False
+        end
+        object Label4: TLabel
+          Left = 0
+          Height = 15
+          Top = 65
+          Width = 309
+          Align = alTop
+          Caption = 'Runs :'
+          ParentColor = False
+        end
+        object pnlB1Runs: TPanel
+          Left = 0
+          Height = 50
+          Top = 80
+          Width = 309
+          Align = alTop
+          BevelWidth = 2
+          Caption = 'pnlB1Runs'
+          TabOrder = 1
+        end
+        object Label5: TLabel
+          Left = 0
+          Height = 15
+          Top = 130
+          Width = 309
+          Align = alTop
+          Caption = 'Balls Faced :'
+          ParentColor = False
+        end
+        object pnlB1BallsFaced: TPanel
+          Left = 0
+          Height = 50
+          Top = 145
+          Width = 309
+          Align = alTop
+          BevelWidth = 2
+          Caption = 'pnlB1BallsFaced'
+          TabOrder = 2
+        end
+        object lblRunRate: TLabel
+          Left = 0
+          Height = 15
+          Top = 195
+          Width = 309
+          Align = alTop
+          Caption = 'Run Rate :'
+          ParentColor = False
+        end
+        object pnlB1RunRate: TPanel
+          Left = 0
+          Height = 50
+          Top = 210
+          Width = 309
+          Align = alTop
+          BevelWidth = 2
+          Caption = 'pnlB1RunRate'
+          TabOrder = 3
+        end
+      end
+      object GroupBox5: TGroupBox
+        Left = 952
+        Height = 275
+        Top = 253
+        Width = 313
+        ClientHeight = 271
+        ClientWidth = 309
+        TabOrder = 4
+        object Panel7: TPanel
+          Left = 0
+          Height = 50
+          Top = 0
+          Width = 309
+          Align = alTop
+          BevelWidth = 4
+          Caption = 'Panel3'
+          TabOrder = 0
+        end
+        object Label7: TLabel
+          Left = 0
+          Height = 15
+          Top = 50
+          Width = 309
+          Align = alTop
+          Caption = ' '
+          Color = clGray
+          ParentColor = False
+          Transparent = False
+        end
+        object Label8: TLabel
+          Left = 0
+          Height = 15
+          Top = 65
+          Width = 309
+          Align = alTop
+          Caption = 'Runs :'
+          ParentColor = False
+        end
+        object pnlB2Runs: TPanel
+          Left = 0
+          Height = 50
+          Top = 80
+          Width = 309
+          Align = alTop
+          BevelWidth = 2
+          Caption = 'Panel4'
+          TabOrder = 1
+        end
+        object Label9: TLabel
+          Left = 0
+          Height = 15
+          Top = 130
+          Width = 309
+          Align = alTop
+          Caption = 'Balls Faced :'
+          ParentColor = False
+        end
+        object pnlB2BallsFaced: TPanel
+          Left = 0
+          Height = 50
+          Top = 145
+          Width = 309
+          Align = alTop
+          BevelWidth = 2
+          Caption = 'Panel5'
+          TabOrder = 2
+        end
+        object Label10: TLabel
+          Left = 0
+          Height = 15
+          Top = 195
+          Width = 309
+          Align = alTop
+          Caption = 'Run Rate :'
+          ParentColor = False
+        end
+        object pnlB2RunRate: TPanel
+          Left = 0
+          Height = 50
+          Top = 210
+          Width = 309
+          Align = alTop
+          BevelWidth = 2
+          Caption = 'Panel6'
+          TabOrder = 3
+        end
+      end
+      object GroupBox6: TGroupBox
+        Left = 832
+        Height = 209
+        Top = 16
+        Width = 497
+        Caption = 'GroupBox6'
+        ClientHeight = 192
+        ClientWidth = 493
+        TabOrder = 5
+        object pnlTarget: TPanel
+          Left = 40
+          Height = 50
+          Top = 32
+          Width = 170
+          Caption = 'pnlTarget'
+          TabOrder = 0
+        end
+        object pnlOversLeft: TPanel
+          Left = 288
+          Height = 50
+          Top = 32
+          Width = 170
+          Caption = 'pnlOversLeft'
+          TabOrder = 1
+        end
+        object pnlRunRate: TPanel
+          Left = 40
+          Height = 50
+          Top = 128
+          Width = 170
+          Caption = 'pnlRunRate'
+          TabOrder = 2
+        end
+        object Label11: TLabel
+          Left = 40
+          Height = 15
+          Top = 104
+          Width = 64
+          Caption = 'Run Rate :'
+          ParentColor = False
+        end
+        object Label12: TLabel
+          Left = 40
+          Height = 15
+          Top = 8
+          Width = 47
+          Caption = 'Target :'
+          ParentColor = False
+        end
+        object Label13: TLabel
+          Left = 288
+          Height = 15
+          Top = 8
+          Width = 69
+          Caption = 'Overs left :'
+          ParentColor = False
+        end
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'TabSheet2'
+    end
+  end
+end

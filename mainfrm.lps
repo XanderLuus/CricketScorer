@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="8">
+      <Unit0>
+        <Filename Value="mainfrm.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="38"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="main_u.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmMain"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <TopLine Value="221"/>
+        <CursorPos X="36" Y="246"/>
+        <UsageCount Value="38"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="scorer_u.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmScorer"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Scorer_u"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="44"/>
+        <CursorPos X="41" Y="50"/>
+        <FoldState Value=" T3ig03021 T1mH0% T0j9278 piYj0431D17"/>
+        <UsageCount Value="38"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="dm1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dmMain"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="DM1"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="54" Y="8"/>
+        <UsageCount Value="38"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="runout_u.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmRunOut"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="RunOut_u"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="48" Y="13"/>
+        <UsageCount Value="25"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="main_u2.pas"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="10"/>
+        <CursorPos X="4" Y="13"/>
+        <UsageCount Value="19"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="/media/xander/3A5A5A545A5A0CCF/Xander Files/Cicket/main_u.pas"/>
+        <ComponentName Value="frmScorer"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="9"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="/usr/lib/lazarus/1.6/lcl/include/customform.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2195"/>
+        <CursorPos X="21" Y="2208"/>
+        <UsageCount Value="9"/>
+      </Unit7>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="runout_u.pas"/>
+        <Caret Line="31" Column="83" TopLine="11"/>
+      </Position1>
+      <Position2>
+        <Filename Value="runout_u.pas"/>
+        <Caret Line="32" Column="83" TopLine="11"/>
+      </Position2>
+      <Position3>
+        <Filename Value="runout_u.pas"/>
+        <Caret Line="33" Column="83" TopLine="11"/>
+      </Position3>
+      <Position4>
+        <Filename Value="runout_u.pas"/>
+        <Caret Line="34" Column="83" TopLine="11"/>
+      </Position4>
+      <Position5>
+        <Filename Value="runout_u.pas"/>
+        <Caret Line="35" Column="83" TopLine="11"/>
+      </Position5>
+      <Position6>
+        <Filename Value="runout_u.pas"/>
+        <Caret Line="36" Column="83" TopLine="11"/>
+      </Position6>
+      <Position7>
+        <Filename Value="runout_u.pas"/>
+        <Caret Line="35" Column="83" TopLine="11"/>
+      </Position7>
+      <Position8>
+        <Filename Value="runout_u.pas"/>
+        <Caret Line="36" Column="83" TopLine="11"/>
+      </Position8>
+      <Position9>
+        <Filename Value="runout_u.pas"/>
+        <Caret Line="37" Column="83" TopLine="11"/>
+      </Position9>
+      <Position10>
+        <Filename Value="runout_u.pas"/>
+        <Caret Line="36" Column="83" TopLine="11"/>
+      </Position10>
+      <Position11>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="82" Column="16" TopLine="77"/>
+      </Position11>
+      <Position12>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="234" Column="21" TopLine="26"/>
+      </Position12>
+      <Position13>
+        <Filename Value="runout_u.pas"/>
+        <Caret Line="33" Column="65" TopLine="21"/>
+      </Position13>
+      <Position14>
+        <Filename Value="runout_u.pas"/>
+        <Caret Line="34" Column="65" TopLine="21"/>
+      </Position14>
+      <Position15>
+        <Filename Value="runout_u.pas"/>
+        <Caret Line="33" Column="65" TopLine="21"/>
+      </Position15>
+      <Position16>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="93" Column="27" TopLine="70"/>
+      </Position16>
+      <Position17>
+        <Filename Value="main_u.pas"/>
+        <Caret Line="216" Column="49" TopLine="201"/>
+      </Position17>
+      <Position18>
+        <Filename Value="main_u.pas"/>
+        <Caret Line="251" Column="11" TopLine="224"/>
+      </Position18>
+      <Position19>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="207" Column="52" TopLine="195"/>
+      </Position19>
+      <Position20>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="209" Column="52" TopLine="197"/>
+      </Position20>
+      <Position21>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="314" TopLine="216"/>
+      </Position21>
+      <Position22>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="321" TopLine="218"/>
+      </Position22>
+      <Position23>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="238" Column="26" TopLine="224"/>
+      </Position23>
+      <Position24>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="237" Column="26" TopLine="223"/>
+      </Position24>
+      <Position25>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="236" Column="26" TopLine="222"/>
+      </Position25>
+      <Position26>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="237" Column="26" TopLine="223"/>
+      </Position26>
+      <Position27>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="238" Column="26" TopLine="224"/>
+      </Position27>
+      <Position28>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="57" Column="53" TopLine="46"/>
+      </Position28>
+      <Position29>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="56" Column="53" TopLine="45"/>
+      </Position29>
+      <Position30>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="55" Column="53" TopLine="44"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>
