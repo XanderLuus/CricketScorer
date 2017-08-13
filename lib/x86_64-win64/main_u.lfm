@@ -1,0 +1,483 @@
+object frmMain: TfrmMain
+  Left = 1366
+  Height = 739
+  Top = 0
+  Width = 1024
+  Caption = 'frmMain'
+  ClientHeight = 739
+  ClientWidth = 1024
+  LCLVersion = '1.6.0.4'
+  WindowState = wsMaximized
+  object PageControl: TPageControl
+    Left = 0
+    Height = 739
+    Top = 0
+    Width = 1024
+    ActivePage = tsMain
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 0
+    object tsMain: TTabSheet
+      Caption = 'tsMain'
+      ClientHeight = 711
+      ClientWidth = 1022
+      object Panel1: TPanel
+        Left = 344
+        Height = 66
+        Top = 192
+        Width = 378
+        BevelInner = bvRaised
+        BevelWidth = 2
+        Caption = 'New Match'
+        Font.Color = clLime
+        Font.Height = -32
+        Font.Name = 'Droid Sans'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        OnClick = Panel1Click
+      end
+      object Panel2: TPanel
+        Left = 344
+        Height = 66
+        Top = 272
+        Width = 378
+        BevelInner = bvRaised
+        BevelWidth = 2
+        Caption = 'Load Match Summary'
+        Font.Color = clYellow
+        Font.Height = -32
+        Font.Name = 'Droid Sans'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 1
+        OnClick = Panel2Click
+      end
+    end
+    object tsNewMatch: TTabSheet
+      Caption = 'tsNewMatch'
+      ClientHeight = 711
+      ClientWidth = 1022
+      object edtDBname: TEdit
+        Left = 288
+        Height = 39
+        Top = 88
+        Width = 465
+        Font.Height = -27
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 0
+        TextHintFontColor = clRed
+      end
+      object edtN1: TEdit
+        Left = 288
+        Height = 39
+        Top = 216
+        Width = 465
+        Font.Height = -27
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 1
+      end
+      object edtN2: TEdit
+        Left = 288
+        Height = 39
+        Top = 320
+        Width = 465
+        Font.Height = -27
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 2
+      end
+      object Label1: TLabel
+        Left = 288
+        Height = 31
+        Top = 56
+        Width = 247
+        Caption = 'Name the match :'
+        Font.Height = -27
+        Font.Name = 'Sans'
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label2: TLabel
+        Left = 288
+        Height = 31
+        Top = 176
+        Width = 205
+        Caption = 'Team 1 Name :'
+        Font.Height = -27
+        Font.Name = 'Sans'
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label3: TLabel
+        Left = 288
+        Height = 31
+        Top = 280
+        Width = 205
+        Caption = 'Team 2 Name :'
+        Font.Height = -27
+        Font.Name = 'Sans'
+        ParentColor = False
+        ParentFont = False
+      end
+      object btnCreate: TButton
+        Left = 376
+        Height = 41
+        Top = 384
+        Width = 298
+        Caption = 'Create!'
+        Font.Height = -19
+        Font.Name = 'Sans'
+        OnClick = btnCreateClick
+        ParentFont = False
+        TabOrder = 3
+      end
+      object Label4: TLabel
+        Left = 477
+        Height = 18
+        Top = 128
+        Width = 276
+        Caption = 'DONT ADD ANY SPACES TO THE MATCH NAME'
+        Font.Color = clRed
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+    object tsLoadMatch: TTabSheet
+      Caption = 'tsLoadMatch'
+      ClientHeight = 711
+      ClientWidth = 1022
+      object DBGrid1: TDBGrid
+        Left = 264
+        Height = 280
+        Top = 24
+        Width = 656
+        AutoFillColumns = True
+        Color = clWindow
+        Columns = <>
+        TabOrder = 0
+      end
+      object FileListBox1: TFileListBox
+        Left = 0
+        Height = 328
+        Top = 8
+        Width = 256
+        Directory = 'C:/Xander Files/cricketTest/'
+        ItemHeight = 0
+        Mask = '*.sqlite'
+        TabOrder = 1
+        TopIndex = -1
+      end
+    end
+    object tsAddPlayer: TTabSheet
+      Caption = 'tsAddPlayer'
+      ClientHeight = 711
+      ClientWidth = 1022
+      object DBGrid2: TDBGrid
+        Left = 16
+        Height = 368
+        Top = 24
+        Width = 300
+        AutoFillColumns = True
+        Color = clWindow
+        Columns = <>
+        DataSource = dmMain.DSQryT1
+        TabOrder = 0
+      end
+      object DBGrid3: TDBGrid
+        Left = 792
+        Height = 368
+        Top = 24
+        Width = 300
+        AutoFillColumns = True
+        Color = clWindow
+        Columns = <>
+        DataSource = dmMain.DSQryT2
+        TabOrder = 1
+      end
+      object Panel3: TPanel
+        Left = 16
+        Height = 50
+        Top = 480
+        Width = 300
+        BevelInner = bvRaised
+        BevelWidth = 3
+        Caption = 'Add New Player'
+        Font.Color = clLime
+        Font.Height = -19
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 2
+        OnClick = Panel3Click
+      end
+      object Panel4: TPanel
+        Left = 792
+        Height = 50
+        Top = 480
+        Width = 300
+        BevelInner = bvRaised
+        BevelWidth = 3
+        Caption = 'Add New Player'
+        Font.Color = clLime
+        Font.Height = -19
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 3
+        OnClick = Panel4Click
+      end
+      object GroupBox1: TGroupBox
+        Left = 376
+        Height = 112
+        Top = 96
+        Width = 360
+        ClientHeight = 108
+        ClientWidth = 356
+        Color = clGray
+        ParentColor = False
+        TabOrder = 4
+        object Label5: TLabel
+          Left = 0
+          Height = 50
+          Top = 18
+          Width = 356
+          Align = alTop
+          Alignment = taCenter
+          Caption = 'VS'
+          Font.Height = -43
+          Font.Name = 'AvantGarde LT Medium'
+          Font.Style = [fsItalic]
+          Layout = tlCenter
+          ParentColor = False
+          ParentFont = False
+        end
+        object lblT1VS: TLabel
+          Left = 0
+          Height = 18
+          Top = 0
+          Width = 356
+          Align = alTop
+          Caption = 'lblT1VS'
+          ParentColor = False
+        end
+        object lblT2VS: TLabel
+          Left = 0
+          Height = 18
+          Top = 68
+          Width = 356
+          Align = alTop
+          Alignment = taRightJustify
+          Caption = 'lblT2VS'
+          ParentColor = False
+        end
+      end
+      object lblT1: TLabel
+        Left = 16
+        Height = 18
+        Top = 0
+        Width = 7
+        Caption = 'a'
+        ParentColor = False
+      end
+      object lblT2: TLabel
+        Left = 792
+        Height = 18
+        Top = 0
+        Width = 28
+        Caption = 'lblT2'
+        ParentColor = False
+      end
+      object Button1: TButton
+        Left = 488
+        Height = 32
+        Top = 496
+        Width = 136
+        Caption = 'Confirm'
+        OnClick = Button1Click
+        TabOrder = 5
+      end
+      object GroupBox2: TGroupBox
+        Left = 440
+        Height = 176
+        Top = 224
+        Width = 249
+        Caption = 'GroupBox2'
+        ClientHeight = 156
+        ClientWidth = 245
+        TabOrder = 6
+        object spOvers: TSpinEdit
+          Left = 0
+          Height = 26
+          Top = 18
+          Width = 245
+          Align = alTop
+          MaxValue = 50
+          MinValue = 20
+          TabOrder = 0
+          Value = 20
+        end
+        object CheckBox1: TCheckBox
+          Left = 0
+          Height = 20
+          Top = 64
+          Width = 89
+          Caption = 'Test cricket'
+          OnChange = CheckBox1Change
+          TabOrder = 1
+        end
+        object spDays: TSpinEdit
+          Left = 0
+          Height = 26
+          Top = 130
+          Width = 245
+          Align = alBottom
+          MaxValue = 5
+          MinValue = 1
+          TabOrder = 2
+          Value = 1
+          Visible = False
+        end
+        object lblDays: TLabel
+          Left = 0
+          Height = 18
+          Top = 112
+          Width = 245
+          Align = alBottom
+          Caption = 'Days'
+          ParentColor = False
+          Visible = False
+        end
+        object lblOvers: TLabel
+          Left = 0
+          Height = 18
+          Top = 0
+          Width = 245
+          Align = alTop
+          Caption = 'Overs'
+          ParentColor = False
+        end
+      end
+      object edtNameT1: TEdit
+        Left = 120
+        Height = 26
+        Top = 400
+        Width = 196
+        TabOrder = 7
+        TextHint = 'Xander'
+      end
+      object edtSurnameT1: TEdit
+        Left = 120
+        Height = 26
+        Top = 440
+        Width = 196
+        TabOrder = 8
+        TextHint = 'Luus'
+      end
+      object edtNameT2: TEdit
+        Left = 896
+        Height = 26
+        Top = 400
+        Width = 196
+        TabOrder = 9
+        TextHint = 'Johanne'
+      end
+      object edtSurnameT2: TEdit
+        Left = 896
+        Height = 26
+        Top = 440
+        Width = 196
+        TabOrder = 10
+        TextHint = 'Van Niekerk'
+      end
+      object Label6: TLabel
+        Left = 16
+        Height = 18
+        Top = 408
+        Width = 42
+        Caption = 'Name :'
+        ParentColor = False
+      end
+      object Label7: TLabel
+        Left = 16
+        Height = 18
+        Top = 449
+        Width = 60
+        Caption = 'Surname :'
+        ParentColor = False
+      end
+      object Label8: TLabel
+        Left = 792
+        Height = 18
+        Top = 408
+        Width = 42
+        Caption = 'Name :'
+        ParentColor = False
+      end
+      object Label9: TLabel
+        Left = 792
+        Height = 18
+        Top = 449
+        Width = 60
+        Caption = 'Surname :'
+        ParentColor = False
+      end
+      object GroupBox3: TGroupBox
+        Left = 440
+        Height = 81
+        Top = 408
+        Width = 250
+        Caption = 'First Team to Bat'
+        ClientHeight = 61
+        ClientWidth = 246
+        TabOrder = 11
+        object Panel5: TPanel
+          Left = 0
+          Height = 61
+          Top = 0
+          Width = 125
+          Align = alLeft
+          BevelInner = bvLowered
+          BevelWidth = 3
+          ClientHeight = 61
+          ClientWidth = 125
+          TabOrder = 0
+          object dblTeam1: TDBText
+            Left = 6
+            Height = 49
+            Top = 6
+            Width = 113
+            Align = alClient
+            Alignment = taCenter
+            Layout = tlCenter
+            ParentColor = False
+            OnClick = dblTeam1Click
+          end
+        end
+        object Panel6: TPanel
+          Left = 121
+          Height = 61
+          Top = 0
+          Width = 125
+          Align = alRight
+          BevelInner = bvLowered
+          BevelWidth = 3
+          ClientHeight = 61
+          ClientWidth = 125
+          TabOrder = 1
+          object dblTeam2: TDBText
+            Left = 6
+            Height = 49
+            Top = 6
+            Width = 113
+            Align = alClient
+            Alignment = taCenter
+            Layout = tlCenter
+            ParentColor = False
+            OnClick = dblTeam2Click
+          end
+        end
+      end
+    end
+  end
+end
