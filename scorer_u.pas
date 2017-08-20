@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ComCtrls,
-  StdCtrls, ExtCtrls, DbCtrls, Buttons;
+  StdCtrls, ExtCtrls, DbCtrls, Buttons, DBGrids;
 
 type
 
@@ -15,6 +15,18 @@ type
   TfrmScorer = class(TForm)
     btnOutConfirm: TButton;
     btnRunsConfirm: TButton;
+    btnConfirmB_Chooser: TButton;
+    btnBowled: TButton;
+    btnOutSum: TButton;
+    btnCaught: TButton;
+    btnRunOut: TButton;
+    btnClose: TButton;
+    Button5: TButton;
+    btnLBW: TButton;
+    Button7: TButton;
+    Button8: TButton;
+    btnResetStats: TButton;
+    DBGrid1: TDBGrid;
     DBText1: TDBText;
     GroupBox1: TGroupBox;
     GroupBox2: TGroupBox;
@@ -22,6 +34,7 @@ type
     GroupBox4: TGroupBox;
     GroupBox5: TGroupBox;
     GroupBox6: TGroupBox;
+    GroupBox7: TGroupBox;
     Label1: TLabel;
     Label10: TLabel;
     Label11: TLabel;
@@ -31,6 +44,7 @@ type
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
+    Label6: TLabel;
     lblRunRate: TLabel;
     Label7: TLabel;
     Label8: TLabel;
@@ -53,22 +67,31 @@ type
     rgRuns: TRadioGroup;
     TabSheet1: TTabSheet;
     TabSheet2: TTabSheet;
+    TabSheet3: TTabSheet;
+    procedure btnBowledClick(Sender: TObject);
+    procedure btnCaughtClick(Sender: TObject);
+    procedure btnCloseClick(Sender: TObject);
+    procedure btnLBWClick(Sender: TObject);
     procedure btnOutConfirmClick(Sender: TObject);
+    procedure btnOutSumClick(Sender: TObject);
+    procedure btnResetStatsClick(Sender: TObject);
+    procedure btnRunOutClick(Sender: TObject);
     procedure btnRunsConfirmClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
+
+  public
     iBatTotal1, iBatTotal2, iTotal, iBatFace, iBatBallsF1, iBatBallsF2,
     iOver, iExtraTotal, iBowlerRA, iBowlerRA_V, iBowlerEx, iBowlerExV,
     iBatsmanAexF, iBatsmanBexF, iBatsmanExF_V, iBatF, iBatsmanNr, iBowlerWic,
     iBat1Nr, iBat2Nr : Integer;
 
-    iSingle1, iSingle2, iDouble1, iDouble2, iTriple1, iTriple2, iFour1, iFour2,
-    iFive1, iFive2, iSix1, iSix2 : Integer;
+    sBatA, sBatB, sWayOut : String;
+
+    iDot1, iDot2, iSingle1, iSingle2, iDouble1, iDouble2, iTriple1, iTriple2,
+    iFour1, iFour2, iFive1, iFive2, iSix1, iSix2 : Integer;
 
     rRunRate1, rRunRate2, rRunsPO1, rRunsPO2, rRunsPB1, rRunsPB2 : Real;
-    sBatA, sBatB, sWayOut : String;
-  public
-    { public declarations }
   end;
 
 var
@@ -229,6 +252,7 @@ begin
 end;
 
 
+
 procedure TfrmScorer.btnOutConfirmClick(Sender: TObject);
 begin
   Inc(iBowlerWic, 1);
@@ -247,6 +271,9 @@ begin
 
     end else if rgOut.ItemIndex = 3 then          //RUN OUT
     begin
+      frmRunOut.dblBat1.DataField := 'name_surname';
+      frmRunOut.dblBat2.DataField := 'name_surname';
+
       frmRunOut.Show;
     end else if rgOut.ItemIndex = 4 then          //STONK
     begin
@@ -267,7 +294,7 @@ begin
 
     dmMain.SQLQryWrite.Active:=False;
     dmMain.SQLQryWrite.SQL.Text :=
-    'UPDATE  "'+dmMain.sTeamDB+'" SET ' +
+    'UPDATE  "'+dmMain.sSQL_Team+'" SET ' +
     '1s = "'+ IntToStr(iSingle1) +
     '", 2s = "'+ IntToStr(iDouble1) +
     '", 3s = "'+ IntToStr(iTriple1) +
@@ -308,6 +335,118 @@ begin
   rgOut.ItemIndex := -1;
 end;
 
+procedure TfrmScorer.btnOutSumClick(Sender: TObject);
+begin
+  Inc(iBowlerWic,1);
+
+  if frmScorer.iBatFace = 1 then
+    begin
+      dmMain.SQLQryWrite.Active:=False;
+      dmMain.SQLQryWrite.SQL.Text :=
+      'UPDATE  "'+dmMain.sSQL_Team+'" SET ' +
+      '1s = "'+ IntToStr(iSingle1) +
+      '", 2s = "'+ IntToStr(iDouble1) +
+      '", 3s = "'+ IntToStr(iTriple1) +
+      '", 4s = "'+ IntToStr(iFour1) +
+      '", 5s = "'+ IntToStr(iFive1) +
+      '", 6s = "'+ IntToStr(iSix1) +
+      '", run_rate = "'+ FloatToStrF(rRunRate1,ffFixed,10,2) +
+      '", runs_per_ball = "'+ FloatToStrF(rRunsPB1,ffFixed,10,2) +
+      '", runs_per_over = "'+ FloatToStrF(rRunsPO1,ffFixed,10,2) +
+      '", balls_faced = "'+ IntToStr(iBatBallsF1) +
+      '", total_runs = "'+ IntToStr(iBatTotal1) +
+      '", way_out = "'+ sWayOut +
+      '" WHERE id = ' + IntToStr(iBat1Nr);
+      dmMain.SQLQryWrite.ExecSQL;
+      dmMain.SQLTransaction1.Commit;
+
+    end else
+    begin
+      dmMain.SQLQryWrite.Active:=False;
+      dmMain.SQLQryWrite.SQL.Text :=
+      'UPDATE  "'+dmMain.sSQL_Team+'" SET ' +
+      '1s = "'+ IntToStr(iSingle2) +
+      '", 2s = "'+ IntToStr(iDouble2) +
+      '", 3s = "'+ IntToStr(iTriple2) +
+      '", 4s = "'+ IntToStr(iFour2) +
+      '", 5s = "'+ IntToStr(iFive2) +
+      '", 6s = "'+ IntToStr(iSix2) +
+      '", run_rate = "'+ FloatToStrF(rRunRate2,ffFixed,10,2) +
+      '", runs_per_ball = "'+ FloatToStrF(rRunsPB2,ffFixed,10,2) +
+      '", runs_per_over = "'+ FloatToStrF(rRunsPO2,ffFixed,10,2) +
+      '", balls_faced = "'+ IntToStr(iBatBallsF2) +
+      '", total_runs = "'+ IntToStr(iBatTotal2) +
+      '", way_out = "'+ sWayOut +
+      '" WHERE id = ' + IntToStr(iBat2Nr);
+      dmMain.SQLQryWrite.ExecSQL;
+      dmMain.SQLTransaction1.Commit;
+    end;
+end;
+
+procedure TfrmScorer.btnResetStatsClick(Sender: TObject);
+begin
+  if iBatF = 1 then
+    begin
+      iDot1 := 0;
+      iSingle1 := 0;
+      iDouble1 := 0;
+      iTriple1 := 0;
+      iFour1 := 0;
+      iFive1 := 0;
+      iSix1 := 0;
+      rRunRate1 := 0;
+      rRunsPB1 := 0;
+      rRunsPO1 := 0;
+      iBatBallsF1:= 0;
+      iBatTotal1 := 0;
+    end else  //iBatF = 2
+    begin
+      iDot2 := 0;
+      iSingle2 := 0;
+      iDouble2 := 0;
+      iTriple2 := 0;
+      iFour2 := 0;
+      iFive2 := 0;
+      iSix2 := 0;
+      rRunRate2 := 0;
+      rRunsPB2 := 0;
+      rRunsPO2 := 0;
+      iBatBallsF2:= 0;
+      iBatTotal2 := 0;
+    end;
+end;
+
+procedure TfrmScorer.btnRunOutClick(Sender: TObject);
+begin
+  sWayOut := 'Run Out';
+  frmRunOut.Show;
+end;
+
+procedure TfrmScorer.btnBowledClick(Sender: TObject);
+begin
+  sWayOut := 'Bowled';
+  btnOutSum.Click;
+  btnResetStats.Click;
+end;
+
+procedure TfrmScorer.btnCaughtClick(Sender: TObject);
+begin
+  sWayOut := 'Caught';
+  btnOutSum.Click;
+  btnResetStats.Click;
+end;
+
+procedure TfrmScorer.btnCloseClick(Sender: TObject);
+begin
+  frmMain.Close;
+end;
+
+procedure TfrmScorer.btnLBWClick(Sender: TObject);
+begin
+  sWayOut := 'LBW';
+  btnOutSum.Click;
+  btnResetStats.Click;
+end;
 
 
 procedure TfrmScorer.FormCreate(Sender: TObject);
@@ -317,7 +456,6 @@ begin
   iBat1Nr := 1;
   iBat2Nr := 2;
 end;
-
 
 end.
 

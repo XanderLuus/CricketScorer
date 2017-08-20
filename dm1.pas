@@ -28,7 +28,7 @@ type
   private
     { private declarations }
   public
-    sTeamDB : String;
+    sSQL_Team : String;
   end;
 
 var

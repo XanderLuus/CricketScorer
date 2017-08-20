@@ -1,26 +1,26 @@
 object frmMain: TfrmMain
-  Left = 1366
-  Height = 739
-  Top = 0
-  Width = 1024
+  Left = 1375
+  Height = 587
+  Top = 67
+  Width = 1007
   Caption = 'frmMain'
-  ClientHeight = 739
-  ClientWidth = 1024
+  ClientHeight = 587
+  ClientWidth = 1007
   LCLVersion = '1.6.0.4'
   WindowState = wsMaximized
   object PageControl: TPageControl
     Left = 0
-    Height = 739
+    Height = 587
     Top = 0
-    Width = 1024
-    ActivePage = tsAddPlayer
+    Width = 1007
+    ActivePage = TabSheet1
     Align = alClient
-    TabIndex = 3
+    TabIndex = 4
     TabOrder = 0
     object tsMain: TTabSheet
       Caption = 'tsMain'
-      ClientHeight = 711
-      ClientWidth = 1022
+      ClientHeight = 559
+      ClientWidth = 1005
       object Panel1: TPanel
         Left = 344
         Height = 66
@@ -53,20 +53,11 @@ object frmMain: TfrmMain
         TabOrder = 1
         OnClick = Panel2Click
       end
-      object Button2: TButton
-        Left = 88
-        Height = 25
-        Top = 48
-        Width = 75
-        Caption = 'Button2'
-        OnClick = Button2Click
-        TabOrder = 2
-      end
     end
     object tsNewMatch: TTabSheet
       Caption = 'tsNewMatch'
-      ClientHeight = 711
-      ClientWidth = 1022
+      ClientHeight = 559
+      ClientWidth = 1005
       object edtDBname: TEdit
         Left = 288
         Height = 39
@@ -156,8 +147,8 @@ object frmMain: TfrmMain
     end
     object tsLoadMatch: TTabSheet
       Caption = 'tsLoadMatch'
-      ClientHeight = 711
-      ClientWidth = 1022
+      ClientHeight = 559
+      ClientWidth = 1005
       object DBGrid1: TDBGrid
         Left = 264
         Height = 280
@@ -182,8 +173,8 @@ object frmMain: TfrmMain
     end
     object tsAddPlayer: TTabSheet
       Caption = 'tsAddPlayer'
-      ClientHeight = 711
-      ClientWidth = 1022
+      ClientHeight = 559
+      ClientWidth = 1005
       object DBGrid2: TDBGrid
         Left = 16
         Height = 368
@@ -375,29 +366,13 @@ object frmMain: TfrmMain
         TabOrder = 7
         TextHint = 'Xander'
       end
-      object edtSurnameT1: TEdit
-        Left = 120
-        Height = 26
-        Top = 440
-        Width = 196
-        TabOrder = 8
-        TextHint = 'Luus'
-      end
       object edtNameT2: TEdit
         Left = 896
         Height = 26
         Top = 400
         Width = 196
-        TabOrder = 9
+        TabOrder = 8
         TextHint = 'Johanne'
-      end
-      object edtSurnameT2: TEdit
-        Left = 896
-        Height = 26
-        Top = 440
-        Width = 196
-        TabOrder = 10
-        TextHint = 'Van Niekerk'
       end
       object Label6: TLabel
         Left = 16
@@ -405,14 +380,6 @@ object frmMain: TfrmMain
         Top = 408
         Width = 42
         Caption = 'Name :'
-        ParentColor = False
-      end
-      object Label7: TLabel
-        Left = 16
-        Height = 18
-        Top = 449
-        Width = 60
-        Caption = 'Surname :'
         ParentColor = False
       end
       object Label8: TLabel
@@ -423,23 +390,15 @@ object frmMain: TfrmMain
         Caption = 'Name :'
         ParentColor = False
       end
-      object Label9: TLabel
-        Left = 792
-        Height = 18
-        Top = 449
-        Width = 60
-        Caption = 'Surname :'
-        ParentColor = False
-      end
       object GroupBox3: TGroupBox
         Left = 440
         Height = 81
         Top = 408
         Width = 250
-        Caption = 'GroupBox3'
+        Caption = 'First Team to Bat'
         ClientHeight = 61
         ClientWidth = 246
-        TabOrder = 11
+        TabOrder = 9
         object Panel5: TPanel
           Left = 0
           Height = 61
@@ -486,6 +445,74 @@ object frmMain: TfrmMain
             OnClick = dblTeam2Click
           end
         end
+      end
+    end
+    object TabSheet1: TTabSheet
+      Caption = 'TabSheet1'
+      ClientHeight = 559
+      ClientWidth = 1005
+      object Label10: TLabel
+        Left = 88
+        Height = 18
+        Top = 24
+        Width = 160
+        Caption = 'Choose the FIRST batsman'
+        ParentColor = False
+      end
+      object Label11: TLabel
+        Left = 688
+        Height = 18
+        Top = 24
+        Width = 178
+        Caption = 'Choose the SECOND batsman'
+        ParentColor = False
+      end
+      object dbgChooseBat1: TDBGrid
+        Left = 88
+        Height = 400
+        Top = 64
+        Width = 328
+        Color = clWindow
+        Columns = <>
+        DataSource = dmMain.DSQryT1
+        TabOrder = 0
+        OnCellClick = dbgChooseBat1CellClick
+      end
+      object dbgChooseBat2: TDBGrid
+        Left = 688
+        Height = 400
+        Top = 64
+        Width = 312
+        Color = clWindow
+        Columns = <>
+        DataSource = dmMain.DSQryT2
+        TabOrder = 1
+        OnCellClick = dbgChooseBat2CellClick
+      end
+      object btnConfirm_Batsmans: TButton
+        Left = 512
+        Height = 25
+        Top = 496
+        Width = 75
+        Caption = 'Confirm'
+        OnClick = btnConfirm_BatsmansClick
+        TabOrder = 2
+      end
+      object dblID1: TDBText
+        Left = 457
+        Height = 18
+        Top = 149
+        Width = 39
+        DataSource = dmMain.DataSBatA
+        ParentColor = False
+      end
+      object dblID2: TDBText
+        Left = 592
+        Height = 18
+        Top = 149
+        Width = 39
+        DataSource = dmMain.DataSBatB
+        ParentColor = False
       end
     end
   end

@@ -1,8 +1,8 @@
 object dmMain: TdmMain
   OldCreateOrder = False
   Height = 380
-  HorizontalOffset = 278
-  VerticalOffset = 227
+  HorizontalOffset = 26
+  VerticalOffset = 207
   Width = 814
   object SQLite3Connection1: TSQLite3Connection
     Connected = False
