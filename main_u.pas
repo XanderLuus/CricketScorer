@@ -112,7 +112,7 @@ begin
     ForceDirectories('/home/xander/cricketTest');
   end;
 
-    dmMain.SQLite3Connection1.DatabaseName:='/home/xander/cricketTest'+sDbName+
+    dmMain.SQLite3Connection1.DatabaseName:='/home/xander/cricketTest/'+sDbName+
     '.sqlite';
     if FileExists(dmMain.SQLite3Connection1.DatabaseName) then
     ShowMessage('ERROR : Database already exists!') else
@@ -223,6 +223,7 @@ end;
 
 procedure TfrmMain.btnConfirm_BatsmansClick(Sender: TObject);
 begin
+  frmScorer.PageControl1.ShowTabs:=False;
   frmScorer.Show;
   frmMain.Hide;
 end;
@@ -247,7 +248,8 @@ begin
   dmMain.DataSBatA.DataSet := dmMain.SQLQryBatA;
   dmMain.DataSBatB.DataSet := dmMain.SQLQryBatB;
 
-  PageControl.PageIndex := 4;
+
+  PageControl.PageIndex:=4;
 end;
 
 procedure TfrmMain.CheckBox1Change(Sender: TObject);

@@ -1,5 +1,5 @@
 object frmRunOut: TfrmRunOut
-  Left = 1668
+  Left = 777
   Height = 384
   Top = 71
   Width = 581

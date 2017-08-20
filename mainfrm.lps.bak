@@ -11,7 +11,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="48"/>
+        <UsageCount Value="51"/>
       </Unit0>
       <Unit1>
         <Filename Value="main_u.pas"/>
@@ -19,9 +19,10 @@
         <ComponentName Value="frmMain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <TopLine Value="149"/>
-        <CursorPos X="18" Y="227"/>
-        <UsageCount Value="48"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="215"/>
+        <CursorPos X="16" Y="225"/>
+        <UsageCount Value="51"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -32,12 +33,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Scorer_u"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="357"/>
-        <CursorPos X="41" Y="363"/>
-        <FoldState Value=" T3jM03 T0jW278 piYj0431c"/>
-        <UsageCount Value="48"/>
+        <TopLine Value="381"/>
+        <CursorPos X="15" Y="390"/>
+        <FoldState Value=" T3jL03 T0jV278 piYj0431/"/>
+        <UsageCount Value="51"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit2>
@@ -51,7 +51,7 @@
         <EditorIndex Value="3"/>
         <TopLine Value="12"/>
         <CursorPos X="10" Y="31"/>
-        <UsageCount Value="48"/>
+        <UsageCount Value="51"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit3>
@@ -72,7 +72,7 @@
           <TopLine Value="83"/>
           <CursorPos X="10" Y="103"/>
         </ExtraEditor1>
-        <UsageCount Value="35"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit4>
@@ -103,124 +103,124 @@
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="main_u.pas"/>
-        <Caret Line="251" Column="3" TopLine="171"/>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="72" Column="54" TopLine="66"/>
       </Position1>
       <Position2>
-        <Filename Value="main_u.pas"/>
-        <Caret Line="227" Column="3" TopLine="225"/>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="71" Column="54" TopLine="65"/>
       </Position2>
       <Position3>
-        <Filename Value="main_u.pas"/>
-        <Caret Line="223" Column="3" TopLine="212"/>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="353" Column="19" TopLine="344"/>
       </Position3>
       <Position4>
-        <Filename Value="main_u.pas"/>
-        <Caret Line="258" Column="24" TopLine="241"/>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="340" Column="27" TopLine="331"/>
       </Position4>
       <Position5>
         <Filename Value="main_u.pas"/>
-        <Caret Line="259" Column="24" TopLine="242"/>
+        <Caret Line="120" Column="21" TopLine="111"/>
       </Position5>
       <Position6>
-        <Filename Value="main_u.pas"/>
-        <Caret Line="265" Column="38" TopLine="247"/>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="297" Column="33" TopLine="283"/>
       </Position6>
       <Position7>
-        <Filename Value="main_u.pas"/>
-        <Caret Line="279" Column="31" TopLine="256"/>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="302" Column="40" TopLine="281"/>
       </Position7>
       <Position8>
-        <Filename Value="main_u.pas"/>
-        <Caret Line="239" Column="35" TopLine="223"/>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="368" Column="45" TopLine="351"/>
       </Position8>
       <Position9>
-        <Filename Value="main_u.pas"/>
-        <Caret Line="289" Column="38" TopLine="281"/>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="374" Column="32" TopLine="353"/>
       </Position9>
       <Position10>
-        <Filename Value="main_u.pas"/>
-        <Caret Line="239" Column="91" TopLine="220"/>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="253" Column="3" TopLine="242"/>
       </Position10>
       <Position11>
-        <Filename Value="main_u.pas"/>
-        <Caret Line="262" Column="20" TopLine="266"/>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="366" Column="24" TopLine="358"/>
       </Position11>
       <Position12>
-        <Filename Value="main_u.pas"/>
-        <Caret Line="231" Column="3" TopLine="223"/>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="367" Column="24" TopLine="359"/>
       </Position12>
       <Position13>
-        <Filename Value="main_u.pas"/>
-        <Caret Line="105" Column="3" TopLine="194"/>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="308" Column="39" TopLine="295"/>
       </Position13>
       <Position14>
-        <Filename Value="main_u.pas"/>
-        <Caret Line="232" Column="48" TopLine="220"/>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="256" Column="38" TopLine="253"/>
       </Position14>
       <Position15>
-        <Filename Value="main_u.pas"/>
-        <Caret Line="226" Column="3" TopLine="221"/>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="306" Column="41" TopLine="293"/>
       </Position15>
       <Position16>
-        <Filename Value="main_u.pas"/>
-        <Caret Line="268" Column="33" TopLine="253"/>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="262" Column="3" TopLine="247"/>
       </Position16>
       <Position17>
-        <Filename Value="main_u.pas"/>
-        <Caret Line="282" Column="33" TopLine="262"/>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="319" Column="52" TopLine="308"/>
       </Position17>
       <Position18>
-        <Filename Value="main_u.pas"/>
-        <Caret Line="236" Column="45" TopLine="223"/>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="384" Column="34" TopLine="365"/>
       </Position18>
       <Position19>
-        <Filename Value="main_u.pas"/>
-        <Caret Line="273" Column="3" TopLine="261"/>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="318" Column="10" TopLine="299"/>
       </Position19>
       <Position20>
-        <Filename Value="main_u.pas"/>
-        <Caret Line="243" Column="48" TopLine="223"/>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="263" Column="42" TopLine="241"/>
       </Position20>
       <Position21>
-        <Filename Value="main_u.pas"/>
-        <Caret Line="245" Column="18" TopLine="224"/>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="383" Column="42" TopLine="362"/>
       </Position21>
       <Position22>
-        <Filename Value="main_u.pas"/>
-        <Caret Line="294" Column="3" TopLine="292"/>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="260" Column="23" TopLine="247"/>
       </Position22>
       <Position23>
-        <Filename Value="main_u.pas"/>
-        <Caret Line="240" Column="53" TopLine="223"/>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="255" Column="28" TopLine="241"/>
       </Position23>
       <Position24>
         <Filename Value="main_u.pas"/>
-        <Caret Line="295" Column="49" TopLine="274"/>
+        <Caret Line="243" Column="44" TopLine="224"/>
       </Position24>
       <Position25>
         <Filename Value="main_u.pas"/>
-        <Caret Line="226" Column="25" TopLine="209"/>
+        <Caret Line="232" Column="3" TopLine="221"/>
       </Position25>
       <Position26>
-        <Filename Value="main_u.pas"/>
-        <Caret Line="293" Column="63" TopLine="272"/>
+        <Filename Value="scorer_u.pas"/>
+        <Caret Line="316" Column="3" TopLine="301"/>
       </Position26>
       <Position27>
         <Filename Value="scorer_u.pas"/>
-        <Caret Line="381" Column="13" TopLine="353"/>
+        <Caret Line="268" Column="41" TopLine="247"/>
       </Position27>
       <Position28>
-        <Filename Value="scorer_u.pas"/>
-        <Caret Line="383" Column="13" TopLine="355"/>
+        <Filename Value="main_u.pas"/>
+        <Caret Line="292" Column="29" TopLine="275"/>
       </Position28>
       <Position29>
-        <Filename Value="scorer_u.pas"/>
-        <Caret Line="441" Column="16" TopLine="432"/>
+        <Filename Value="main_u.pas"/>
+        <Caret Line="250" Column="33" TopLine="234"/>
       </Position29>
       <Position30>
-        <Filename Value="scorer_u.pas"/>
-        <Caret Line="427" Column="3" TopLine="419"/>
+        <Filename Value="main_u.pas"/>
+        <Caret Line="247" Column="68" TopLine="224"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>

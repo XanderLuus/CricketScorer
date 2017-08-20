@@ -13,7 +13,6 @@ type
   { TfrmScorer }
 
   TfrmScorer = class(TForm)
-    btnOutConfirm: TButton;
     btnRunsConfirm: TButton;
     btnConfirmB_Chooser: TButton;
     btnBowled: TButton;
@@ -28,7 +27,7 @@ type
     btnResetStats: TButton;
     DBGrid1: TDBGrid;
     DBText1: TDBText;
-    GroupBox1: TGroupBox;
+    DBText2: TDBText;
     GroupBox2: TGroupBox;
     GroupBox3: TGroupBox;
     GroupBox4: TGroupBox;
@@ -63,7 +62,6 @@ type
     Panel7: TPanel;
     pnlB2Runs: TPanel;
     pnlB2BallsFaced: TPanel;
-    rgOut: TRadioGroup;
     rgRuns: TRadioGroup;
     TabSheet1: TTabSheet;
     TabSheet2: TTabSheet;
@@ -71,12 +69,13 @@ type
     procedure btnBowledClick(Sender: TObject);
     procedure btnCaughtClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
+    procedure btnConfirmB_ChooserClick(Sender: TObject);
     procedure btnLBWClick(Sender: TObject);
-    procedure btnOutConfirmClick(Sender: TObject);
     procedure btnOutSumClick(Sender: TObject);
     procedure btnResetStatsClick(Sender: TObject);
     procedure btnRunOutClick(Sender: TObject);
     procedure btnRunsConfirmClick(Sender: TObject);
+    procedure DBGrid1CellClick(Column: TColumn);
     procedure FormCreate(Sender: TObject);
   private
 
@@ -251,88 +250,16 @@ begin
   rgRuns.ItemIndex := -1;
 end;
 
-
-
-procedure TfrmScorer.btnOutConfirmClick(Sender: TObject);
+procedure TfrmScorer.DBGrid1CellClick(Column: TColumn);
+var
+  sSelectedName : String;
 begin
-  Inc(iBowlerWic, 1);
-  sWayOut := 'Bowled';      //ToDo : set values for outs
-
-  if iBatF = 1 then
-  begin
-    if rgOut.ItemIndex = 0 then                   //BOWLED
-    begin
-
-    end else if rgOut.ItemIndex = 1 then          //LBW
-    begin
-
-    end else if rgOut.ItemIndex = 2 then          //CAUGHT
-    begin
-
-    end else if rgOut.ItemIndex = 3 then          //RUN OUT
-    begin
-      frmRunOut.dblBat1.DataField := 'name_surname';
-      frmRunOut.dblBat2.DataField := 'name_surname';
-
-      frmRunOut.Show;
-    end else if rgOut.ItemIndex = 4 then          //STONK
-    begin
-
-    end else if rgOut.ItemIndex = 5 then          //HIT OWN STUMPS
-    begin
-
-    end else if rgOut.ItemIndex = 6 then          //DQ
-    begin
-
-    end else if rgOut.ItemIndex = 7 then          //RETIRE
-    begin
-
-    end else if rgOut.ItemIndex = 8 then          //OTHER
-    begin
-
-    end;
-
-    dmMain.SQLQryWrite.Active:=False;
-    dmMain.SQLQryWrite.SQL.Text :=
-    'UPDATE  "'+dmMain.sSQL_Team+'" SET ' +
-    '1s = "'+ IntToStr(iSingle1) +
-    '", 2s = "'+ IntToStr(iDouble1) +
-    '", 3s = "'+ IntToStr(iTriple1) +
-    '", 4s = "'+ IntToStr(iFour1) +
-    '", 5s = "'+ IntToStr(iFive1) +
-    '", 6s = "'+ IntToStr(iSix1) +
-    '", run_rate = "'+ FloatToStrF(rRunRate1,ffFixed,10,2) +
-    '", runs_per_ball = "'+ FloatToStrF(rRunsPB1,ffFixed,10,2) +
-    '", runs_per_over = "'+ FloatToStrF(rRunsPO1,ffFixed,10,2) +
-    '", balls_faced = "'+ IntToStr(iBatBallsF1) +
-    '", total_runs = "'+ IntToStr(iBatTotal1) +
-    '", way_out = "'+ sWayOut +
-    '" WHERE id = ' + IntToStr(iBat1Nr);
-    dmMain.SQLQryWrite.ExecSQL;
-    dmMain.SQLTransaction1.Commit;
-
-  end else
-  begin
-    dmMain.SQLQryWrite.Active:=False;
-    dmMain.SQLQryWrite.SQL.Text :=
-    'UPDATE  "team2" SET ' +
-    '1s = "'+ IntToStr(iSingle2) +
-    '", 2s = "'+ IntToStr(iDouble2) +
-    '", 3s = "'+ IntToStr(iTriple2) +
-    '", 4s = "'+ IntToStr(iFour2) +
-    '", 5s = "'+ IntToStr(iFive2) +
-    '", 6s = "'+ IntToStr(iSix2) +
-    '", run_rate = "'+ FloatToStrF(rRunRate2,ffFixed,10,2) +
-    '", runs_per_ball = "'+ FloatToStrF(rRunsPB2,ffFixed,10,2) +
-    '", runs_per_over = "'+ FloatToStrF(rRunsPO2,ffFixed,10,2) +
-    '", balls_faced = "'+ IntToStr(iBatBallsF2) +
-    '", total_runs = "'+ IntToStr(iBatTotal2) +
-    '", way_out = "'+ sWayOut +
-    '" WHERE id = ' + IntToStr(iBat2Nr);
-    dmMain.SQLQryWrite.ExecSQL;
-    dmMain.SQLTransaction1.Commit;
-  end;
-  rgOut.ItemIndex := -1;
+  sSelectedName := DBGrid1.SelectedField.Text;
+  dmMain.SQLQryPlayerT2.Active:=False;
+  dmMain.SQLQryPlayerT2.SQL.Text:='SELECT "id" FROM '+dmMain.sSQL_Team+
+  ' WHERE "name_surname" = '''+sSelectedName+''';';
+  dmMain.SQLQryPlayerT2.Active:=True;
+  DBText2.DataField:= 'id';
 end;
 
 procedure TfrmScorer.btnOutSumClick(Sender: TObject);
@@ -343,20 +270,20 @@ begin
     begin
       dmMain.SQLQryWrite.Active:=False;
       dmMain.SQLQryWrite.SQL.Text :=
-      'UPDATE  "'+dmMain.sSQL_Team+'" SET ' +
-      '1s = "'+ IntToStr(iSingle1) +
-      '", 2s = "'+ IntToStr(iDouble1) +
-      '", 3s = "'+ IntToStr(iTriple1) +
-      '", 4s = "'+ IntToStr(iFour1) +
-      '", 5s = "'+ IntToStr(iFive1) +
-      '", 6s = "'+ IntToStr(iSix1) +
-      '", run_rate = "'+ FloatToStrF(rRunRate1,ffFixed,10,2) +
-      '", runs_per_ball = "'+ FloatToStrF(rRunsPB1,ffFixed,10,2) +
-      '", runs_per_over = "'+ FloatToStrF(rRunsPO1,ffFixed,10,2) +
-      '", balls_faced = "'+ IntToStr(iBatBallsF1) +
-      '", total_runs = "'+ IntToStr(iBatTotal1) +
-      '", way_out = "'+ sWayOut +
-      '" WHERE id = ' + IntToStr(iBat1Nr);
+      'UPDATE  '+dmMain.sSQL_Team+' SET ' +
+      '"1s" = '+ IntToStr(iSingle1) +
+      ', "2s" = '+ IntToStr(iDouble1) +
+      ', "3s" = '+ IntToStr(iTriple1) +
+      ', "4s" = '+ IntToStr(iFour1) +
+      ', "5s" = '+ IntToStr(iFive1) +
+      ', "6s" = '+ IntToStr(iSix1) +
+      ', "run_rate" = '+ FloatToStrF(rRunRate1,ffFixed,10,2) +
+      ', "runs_per_ball" = '+ FloatToStrF(rRunsPB1,ffFixed,10,2) +
+      ', "runs_per_over" = '+ FloatToStrF(rRunsPO1,ffFixed,10,2) +
+      ', "balls_faced" = '+ IntToStr(iBatBallsF1) +
+      ', "total_runs" = '+ IntToStr(iBatTotal1) +
+      ', "way_out" = '''+ sWayOut +
+      ''' WHERE "id" = ' + IntToStr(iBat1Nr);
       dmMain.SQLQryWrite.ExecSQL;
       dmMain.SQLTransaction1.Commit;
 
@@ -364,23 +291,33 @@ begin
     begin
       dmMain.SQLQryWrite.Active:=False;
       dmMain.SQLQryWrite.SQL.Text :=
-      'UPDATE  "'+dmMain.sSQL_Team+'" SET ' +
-      '1s = "'+ IntToStr(iSingle2) +
-      '", 2s = "'+ IntToStr(iDouble2) +
-      '", 3s = "'+ IntToStr(iTriple2) +
-      '", 4s = "'+ IntToStr(iFour2) +
-      '", 5s = "'+ IntToStr(iFive2) +
-      '", 6s = "'+ IntToStr(iSix2) +
-      '", run_rate = "'+ FloatToStrF(rRunRate2,ffFixed,10,2) +
-      '", runs_per_ball = "'+ FloatToStrF(rRunsPB2,ffFixed,10,2) +
-      '", runs_per_over = "'+ FloatToStrF(rRunsPO2,ffFixed,10,2) +
-      '", balls_faced = "'+ IntToStr(iBatBallsF2) +
-      '", total_runs = "'+ IntToStr(iBatTotal2) +
-      '", way_out = "'+ sWayOut +
-      '" WHERE id = ' + IntToStr(iBat2Nr);
+      'UPDATE  '+dmMain.sSQL_Team+' SET ' +
+      '"1s" = '+ IntToStr(iSingle2) +
+      ', "2s" = '+ IntToStr(iDouble2) +
+      ', "3s" = '+ IntToStr(iTriple2) +
+      ', "4s" = '+ IntToStr(iFour2) +
+      ', "5s" = '+ IntToStr(iFive2) +
+      ', "6s" = '+ IntToStr(iSix2) +
+      ', "run_rate" = '+ FloatToStrF(rRunRate2,ffFixed,10,2) +
+      ', "runs_per_ball" = '+ FloatToStrF(rRunsPB2,ffFixed,10,2) +
+      ', "runs_per_over" = '+ FloatToStrF(rRunsPO2,ffFixed,10,2) +
+      ', "balls_faced" = '+ IntToStr(iBatBallsF2) +
+      ', "total_runs" = '+ IntToStr(iBatTotal2) +
+      ', "way_out" = '''+ sWayOut +
+      ''' WHERE "id" = ' + IntToStr(iBat2Nr);
       dmMain.SQLQryWrite.ExecSQL;
       dmMain.SQLTransaction1.Commit;
     end;
+//Choose new batsman
+  dmMain.SQLQryPlayerT1.Active:=False;
+  dmMain.SQLQryPlayerT1.SQL.Text := 'SELECT name_surname FROM '+dmMain.sSQL_Team;
+  dmMain.SQLQryPlayerT1.Active:=True;
+  dmMain.DSQryT1.DataSet := dmMain.SQLQryPlayerT1;
+  DBGrid1.DataSource := dmMain.DSQryT1;
+
+  dmMain.DSQryT2.DataSet := dmMain.SQLQryPlayerT2;
+  DBText2.DataSource := dmMain.DSQryT2;
+  PageControl1.PageIndex := 1;
 end;
 
 procedure TfrmScorer.btnResetStatsClick(Sender: TObject);
@@ -439,6 +376,21 @@ end;
 procedure TfrmScorer.btnCloseClick(Sender: TObject);
 begin
   frmMain.Close;
+end;
+
+procedure TfrmScorer.btnConfirmB_ChooserClick(Sender: TObject);
+var
+  iNameChosen : Integer;
+begin
+  iNameChosen := StrToInt(DBText2.Caption);
+  if iBatF = 1 then
+    begin
+      iBat1Nr := iNameChosen;
+    end else
+    begin
+      iBat2Nr := iNameChosen;
+    end;
+  PageControl1.PageIndex:=0;
 end;
 
 procedure TfrmScorer.btnLBWClick(Sender: TObject);

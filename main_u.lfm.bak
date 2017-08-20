@@ -1,7 +1,7 @@
 object frmMain: TfrmMain
-  Left = 1375
+  Left = 109
   Height = 587
-  Top = 67
+  Top = 117
   Width = 1007
   Caption = 'frmMain'
   ClientHeight = 587
@@ -13,19 +13,20 @@ object frmMain: TfrmMain
     Height = 587
     Top = 0
     Width = 1007
-    ActivePage = TabSheet1
+    ActivePage = tsMain
     Align = alClient
-    TabIndex = 4
+    ShowTabs = False
+    TabIndex = 0
     TabOrder = 0
     object tsMain: TTabSheet
       Caption = 'tsMain'
-      ClientHeight = 559
+      ClientHeight = 585
       ClientWidth = 1005
       object Panel1: TPanel
-        Left = 344
+        Left = 480
         Height = 66
-        Top = 192
-        Width = 378
+        Top = 216
+        Width = 418
         BevelInner = bvRaised
         BevelWidth = 2
         Caption = 'New Match'
@@ -38,10 +39,10 @@ object frmMain: TfrmMain
         OnClick = Panel1Click
       end
       object Panel2: TPanel
-        Left = 344
+        Left = 480
         Height = 66
-        Top = 272
-        Width = 378
+        Top = 296
+        Width = 418
         BevelInner = bvRaised
         BevelWidth = 2
         Caption = 'Load Match Summary'
@@ -56,7 +57,7 @@ object frmMain: TfrmMain
     end
     object tsNewMatch: TTabSheet
       Caption = 'tsNewMatch'
-      ClientHeight = 559
+      ClientHeight = 585
       ClientWidth = 1005
       object edtDBname: TEdit
         Left = 288
@@ -147,7 +148,7 @@ object frmMain: TfrmMain
     end
     object tsLoadMatch: TTabSheet
       Caption = 'tsLoadMatch'
-      ClientHeight = 559
+      ClientHeight = 585
       ClientWidth = 1005
       object DBGrid1: TDBGrid
         Left = 264
@@ -173,7 +174,7 @@ object frmMain: TfrmMain
     end
     object tsAddPlayer: TTabSheet
       Caption = 'tsAddPlayer'
-      ClientHeight = 559
+      ClientHeight = 585
       ClientWidth = 1005
       object DBGrid2: TDBGrid
         Left = 16
@@ -449,7 +450,7 @@ object frmMain: TfrmMain
     end
     object TabSheet1: TTabSheet
       Caption = 'TabSheet1'
-      ClientHeight = 559
+      ClientHeight = 585
       ClientWidth = 1005
       object Label10: TLabel
         Left = 88
@@ -499,7 +500,7 @@ object frmMain: TfrmMain
         TabOrder = 2
       end
       object dblID1: TDBText
-        Left = 457
+        Left = 456
         Height = 18
         Top = 149
         Width = 39
